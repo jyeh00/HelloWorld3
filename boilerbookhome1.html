@@ -1,0 +1,155 @@
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<script src="script1.js"></script>
+<title>Home || Boiler Books</title>
+</head>
+
+<body>
+
+<style type="text/css" font="Modern, Arial">
+body,td,th {
+}
+a:link {
+  text-decoration: none;
+}
+a:visited {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+a:active {
+  text-decoration: none;
+}
+</style>
+
+<table align="left" border="0" valign="bottom" text-align="center">
+<tr>
+  <td colspan="1">
+  <a href="https://www.purdue.edu/">
+  <img src="https://online.purdue.edu/sites/purdue/files/PRD_open-graph.png" width="220" height="80" alt=""/></td>
+  </a>
+  <td width="1000" valign="center"><center><a href="boilerbookhome1.html"><img src="boilerbooks.jpeg" width="220" height="80"></a></center></td>
+  <td colspan="4">
+  <a href="https://www.purdue.edu/apps/account/cas/login?service=https%3A%2F%2Fwl.mypurdue.purdue.edu%2Fc%2Fportal%2Flogin">
+  <img src="http://www.clker.com/cliparts/m/F/H/g/H/j/gray-login-extra-thin-button.svg" width="200" height="100" alt=""/></td>
+  </a>
+</tr>
+</table>
+
+<hr>
+
+<table align="center" border="0">
+  <tr>
+    
+    <td width="1000" valign="left" style="font-size:25px"><strong>Recommended:</strong></td>
+    </tr>
+</table>
+
+<table align="center" border="1"  frame="box" rules="none" height="50">
+  <tr>
+    <td width="50" valign="left"><img src="https://www.shareicon.net/download/2015/12/06/683390_arrows.svg" width="50" height="100" alt=""/></td>
+    <td width="250" valign="center"><center>
+    <a href="boilerbookbookcalc.html">
+    <img src="https://images-na.ssl-images-amazon.com/images/I/51Q7xZG5OnL._AC_US218_.jpg" width="175" height="200"><br>a
+    Bundle: Calculus: Early Transcendentals, Loose-Leaf..</a></center></td>
+
+    <td width="250" valign="center"><center>
+    <a href="boilerbookbookcalc1.html">
+    <img src="https://images-na.ssl-images-amazon.com/images/I/51Q7xZG5OnL._AC_US218_.jpg" width="175" height="200"><br>
+    Single Variable Calculus: Early Transcendentals </a></center></td>
+
+    <td width="250" valign="center"><center><img src="https://images-na.ssl-images-amazon.com/images/I/51FKel3CmaL._SX412_BO1,204,203,200_.jpg" width="150" height="200"> <br>
+    Psychology 6e </center></td>
+
+    <td width="250" valign="center"><center><img src="https://images-na.ssl-images-amazon.com/images/I/51%2B5gE9lNTL._SX384_BO1,204,203,200_.jpg" width="150" height="200"><br>Start Concurrent: An Introduction to Problem Solving in Java</center></td>
+
+    <td width="50" valign="left"><img src="https://image.flaticon.com/icons/svg/109/109617.svg" width="50" height="100" alt=""/></td></table>
+
+<br>
+
+<center>
+
+<table width="1200" border="0" border-collapse="collapse">
+
+  <tbody>
+
+    <tr>
+      <td height="1" colspan="6" bgcolor="#000000"></td>
+    </tr>
+    <tr>
+      <td height="1" colspan="6"></td>
+    </tr>
+    <tr border="none">
+      
+      <td width="300" valign="top" bgcolor="#FFFCE1" style="font-size:25px">
+        <br>
+        <u><strong>Search Class:<br></strong></u>
+        <input type="text" name="class"> <button id="searchBook">Search</button><br>
+        <br>
+        <font size="3">
+        <b>Commonly Searched: </b><br>
+        MA 16500<br>
+        MA 16600<br>
+        PSY 12000<br></font>
+        </td>
+      
+      <td height="300" width="300" valign="top" border-left="1 px" bgcolor="#D6D6D6" style="font-size:25px">
+      	<p id="temp"></p>
+        <u><strong><br>Search Book:<br></strong></u>
+        <input type="text" name="isbn" id="isbn"> <button id="searchBook" onclick="googleBooksPrices()">Search</button>
+        <br>
+        <br>
+        <font size="3">
+        <b>Commonly Searched: </b><br>
+        <a href="boilerbookbookcalc.html"> Bundle: Calculus: Early Transcendentals, Loose-Leaf Version, 8th + WebAssign...<br></a>
+        <a href="boilerbookbookcalc1.html"> Single Variable Calculus: Early Transcendentals<br></a>
+        Psychology (6th Edition) By James S. Nairne<br>
+        </font>
+        </td>
+        </strong>
+        </td>
+      
+      <script>
+      	function googleBooksPrices() {
+
+  var request = new XMLHttpRequest();
+  var isbn = document.getElementById("isbn").value;
+  request.open("GET", "https://www.googleapis.com/books/v1/volumes?key=AIzaSyA4S-VOm15Z5gq-x-uF6Zalp_T9rYRo3nM&q=".concat(isbn), false);
+  request.send();
+  var googleBooksResponse = request.responseText; //console.log(json);
+  var googleBooksJson = JSON.parse(googleBooksResponse);
+  //console.log("Google Books: " + price);
+ var bookPrice = googleBooksJson.items[0].saleInfo.listPrice.amount
+ console.log(bookPrice)
+ document.getElementById("temp").innerHTML = bookPrice;
+}
+
+
+
+</script>
+
+
+
+
+
+    </tr>
+    <tr>
+      <td height="1" colspan="6"></td>
+    </tr>
+    <tr>
+      <td height="1" colspan="6" bgcolor="#000000"></td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong> Comments or questions?<br>
+  Contact us: (123)456-7890<br>
+</center>
+
+
+</body>
+</html>
